@@ -1,0 +1,44 @@
+{
+  "name": "expressjs-socketio-postgresql-chatroom",
+  "version": "1.0.0",
+  "description": "Simple chatroom application based on NodeJS ExpressJS Socket.io and PostgreSQL",
+  "main": "app.js",
+  "scripts": {
+    "populate": "node bin/populate",
+    "start": "node bin/www",
+    "test": "set NODE_ENV=test&&node bin/populate&&mocha \"test/functional\""
+  },
+  "keywords": [
+    "NodeJS",
+    "ExpressJS",
+    "Socket.io",
+    "PostgreSQL",
+    "ChatRoom",
+    "Chat"
+  ],
+  "author": "Ergin Aktas",
+  "license": "ISC",
+  "dependencies": {
+    "basic-auth": "^1.0.4",
+    "body-parser": "^1.15.1",
+    "bower": "^1.7.9",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.2.0",
+    "express": "^4.14.0",
+    "express-session": "^1.13.0",
+    "install": "^0.8.1",
+    "mocha": "^2.5.3",
+    "morgan": "^1.7.0",
+    "node-cache": "^3.2.1",
+    "npm": "^3.9.6",
+    "pg": "^5.1.0",
+    "pg-hstore": "^2.3.2",
+    "request": "^2.72.0",
+    "sequelize": "^3.23.3",
+    "sequelize-cli": "^2.1.0",
+    "socket.io": "^1.4.6",
+    "winston": "^2.2.0"
+  }
+}

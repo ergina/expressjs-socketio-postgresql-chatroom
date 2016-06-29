@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+var async = require('async');
+var models = require("../models");
+var channelPopulator = require("../helpers/channelPopulator");
+var userPopulator = require("../helpers/userPopulator");
+
+var isFinished = false;
+
+models.sequelize.sync({
+  force: true
+}).then(function() {
+  async.series([channelPopulator,userPopulator],
+    function(err, result) {
+      console.log("DB is populated!");
+      isFinished = true;
+    });
+});
+
+var interval = setInterval(function() {
+  if (isFinished) {
+    return clearInterval(interval);
+  }
+}, 500);

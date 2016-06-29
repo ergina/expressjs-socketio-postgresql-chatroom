@@ -1,0 +1,58 @@
+
+<div class="form" ng-init="signinTab=true">
+
+  <ul class="tab-group">
+    <li class="tab" ng-class="{active: signupTab}"><a ng-click="signinTab=false;signupTab=true;vm.errorMessage=''">Yeni Üye</a></li>
+    <li class="tab" ng-class="{active: signinTab}"><a ng-click="signupTab=false;signinTab=true;vm.errorMessage=''">Mevcut Üye</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="signup" ng-if="signupTab">
+      <form name="yForm">
+
+        <div class="field-wrap">
+          <input type="text" placeholder="Kullanıcı Adı *" required autocomplete="off" ng-model="vm.form.yUserName" />
+        </div>
+
+        <div class="field-wrap">
+          <input type="password" placeholder="Şifre *" required autocomplete="off" ng-model="vm.form.yPassword"/>
+        </div>
+
+        <div class="field-wrap">
+          <input placeholder="Şifre Tekrar *" type="password" required autocomplete="off" ng-model="vm.form.yPassword2"/>
+        </div>
+
+        <div class="field-wrap error">
+          <span>{{vm.errorMessage}}</span>
+        </div>
+
+        <button type="button" class="button button-block" ng-click="vm.yFormSubmit()"/>Kaydol</button>
+
+      </form>
+
+    </div>
+
+    <div id="login" ng-if="signinTab">
+      <form name="eForm">
+
+        <div class="field-wrap">
+          <input type="text" placeholder="Kullanıcı Adı *" required autocomplete="off" ng-model="vm.form.eUserName" />
+        </div>
+
+        <div class="field-wrap">
+          <input type="password" placeholder="Şifre *" required autocomplete="off" ng-model="vm.form.ePassword"/>
+        </div>
+
+        <div class="field-wrap error">
+          <span>{{vm.errorMessage}}</span>
+        </div>
+
+        <button type="button" class="button button-block" ng-click="vm.eFormSubmit()"/>Giriş</button>
+
+      </form>
+
+    </div>
+
+  </div><!-- tab-content -->
+
+</div> <!-- /form -->

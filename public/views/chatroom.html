@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row " style="padding-top:40px;">
+    <h3 class="text-center" >HOŞGELDİN {{vm.user.kullaniciAdi}} </h3>
+    <br /><br />
+    <div class="col-md-8">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <span>Genel</span>
+          <dir-pagination-controls max-size="8" direction-links="true" boundary-links="true" on-page-change="vm.ArsivGetir(newPageNumber)"></dir-pagination-controls>
+        </div>
+        <div class="panel-body">
+          <ul class="media-list">
+
+            <li class="media" dir-paginate="mesaj in vm.mesajlar | orderBy: 'kayit_tarihi'| itemsPerPage:vm.dtDefaults.itemsPerPage" total-items="vm.dtDefaults.total_count" current-page="vm.dtDefaults.currentPage">
+
+              <div class="media-body">
+
+                <div class="media">
+                  <a class="pull-left" href="#">
+                    <small class="text-muted">{{mesaj.gonderen}} | {{mesaj.kayit_tarihi | date:'medium'}}</small>
+                  </a>
+                  <div class="media-body" >
+                    {{mesaj.mesaj}}
+                    <br />
+
+                    <hr />
+                  </div>
+                </div>
+
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="panel-footer">
+          <form name="mesajForm">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Mesaj" ng-model="vm.mesaj"/>
+              <span class="input-group-btn">
+                <button class="btn btn-info" type="submit" ng-click="vm.MesajGonder()">Gönder</button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          {{vm.peopleOnline.count + ' kişi online.'}}
+        </div>
+        <div class="panel-body">
+          <ul class="media-list">
+
+            <li class="media">
+
+              <div class="media-body">
+
+                <div class="media" ng-repeat="people in vm.peopleOnline.people">
+                  <a class="pull-left" href="#">
+                    <img class="media-object img-circle" style="max-height:40px;" src="assets/img/user.png" />
+                  </a>
+                  <div class="media-body" >
+                    <h5>{{people}}</h5>
+
+                    <!-- <small class="text-muted">Active From 3 hours</small> -->
+                  </div>
+                </div>
+
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

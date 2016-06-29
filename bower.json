@@ -1,0 +1,28 @@
+{
+  "name": "expressjs-socketio-postgresql-chatroom",
+  "description": "Simple chatroom application based on NodeJS ExpressJS Socket.io and PostgreSQL",
+  "main": "app.js",
+  "authors": [
+    "Ergin Aktas"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "NodeJS",
+    "ExpressJS",
+    "Socket.io",
+    "PostgreSQL",
+    "ChatRoom",
+    "Chat"
+  ],
+  "dependencies": {
+    "angular-base64": "^2.0.5",
+    "angular-socket-io": "^0.7.0",
+    "angular": "angularjs#^1.5.7",
+    "angular-ui-router": "^0.3.1",
+    "angularUtils-pagination": "angular-utils-pagination#^0.11.1",
+    "ng-uuid": "^0.1.1",
+    "ngstorage": "^0.3.10",
+    "socket.io-client": "^1.4.6"
+  },
+  "homepage": "https://github.com/dnnsprsns/expressjs-socketio-postgresql-chatroom"
+}
